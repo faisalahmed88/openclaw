@@ -334,7 +334,7 @@ export type AgentComponentContext = {
   token?: string;
   guildEntries?: Record<string, DiscordGuildEntryResolved>;
   /** DM allowlist (from allowFrom config; legacy: dm.allowFrom) */
-  allowFrom?: Array<string | number>;
+  allowFrom?: string[];
   /** DM policy (default: "pairing") */
   dmPolicy?: "open" | "pairing" | "allowlist" | "disabled";
 };
@@ -935,7 +935,10 @@ async function handleDiscordComponentEvent(params: {
     return;
   }
 
-  const consumed = resolveDiscordComponentEntry({ id: parsed.componentId });
+  const consumed = resolveDiscordComponentEntry({
+    id: parsed.componentId,
+    consume: !entry.reusable,
+  });
   if (!consumed) {
     try {
       await params.interaction.reply({
@@ -1069,7 +1072,10 @@ async function handleDiscordModalTrigger(params: {
     return;
   }
 
-  const consumed = resolveDiscordComponentEntry({ id: parsed.componentId });
+  const consumed = resolveDiscordComponentEntry({
+    id: parsed.componentId,
+    consume: !entry.reusable,
+  });
   if (!consumed) {
     try {
       await params.interaction.reply({
@@ -1501,7 +1507,10 @@ class DiscordComponentModal extends Modal {
       return;
     }
 
-    const consumed = resolveDiscordModalEntry({ id: modalId });
+    const consumed = resolveDiscordModalEntry({
+      id: modalId,
+      consume: !modalEntry.reusable,
+    });
     if (!consumed) {
       try {
         await interaction.reply({
