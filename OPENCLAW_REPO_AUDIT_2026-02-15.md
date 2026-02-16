@@ -17,7 +17,45 @@
 | `src/plugins/` | Plugin runtime, HTTP registry, config schema management |
 | `src/routing/` | Message routing, session key resolution |
 | `src/providers/` | LLM provider integrations |
-| ... | ... |
+| `src/telegram/` | Built-in Telegram channel implementation |
+| `src/discord/` | Built-in Discord channel implementation |
+| `src/slack/` | Built-in Slack channel implementation |
+| `src/signal/` | Built-in Signal channel implementation |
+| `src/imessage/` | Built-in iMessage channel implementation |
+| `src/web/` | Built-in WhatsApp web channel implementation |
+| `src/whatsapp/` | WhatsApp integration |
+| `src/line/` | Built-in LINE channel implementation |
+| `src/auto-reply/` | Reply chunking, streaming coalesce, queue, tokens |
+| `src/tui/` | Terminal UI (rich interactive TUI) |
+| `src/browser/` | Browser tool (Playwright-based) |
+| `src/media/` | Media pipeline: MIME detection, storage |
+| `src/media-understanding/` | Media understanding (PDF, images) |
+| `src/memory/` | Memory/QMD manager, sync ops, batch processing |
+| `src/sessions/` | Session management |
+| `src/security/` | Audit, formal verification |
+| `src/markdown/` | Markdown IR/rendering |
+| `src/tts/` | Text-to-speech |
+| `src/cron/` | Cron job scheduling |
+| `src/hooks/` | Lifecycle hooks |
+| `src/terminal/` | Terminal utilities: tables, themes/palette, ANSI, links |
+| `src/acp/` | Agent Client Protocol SDK integration |
+| `src/canvas-host/` | Canvas/A2UI hosting |
+| `src/wizard/` | Setup wizard |
+| `src/process/` | Process exec, tau-rpc bridges |
+| `src/pairing/` | Device pairing |
+| `src/node-host/` | Node host invoke layer |
+| `src/logging/` | Logging transports |
+| `src/link-understanding/` | URL/link content extraction |
+| `src/macos/` | macOS-specific integration |
+| `src/daemon/` | Daemon/background process management |
+| `src/compat/` | Legacy compatibility |
+| `src/auth/` | Authentication and authorization |
+| `src/models/` | Model management and selection |
+| `src/sandbox/` | Sandbox execution environment |
+| `src/storage/` | Storage abstraction layer |
+| `src/utils/` | Shared utility functions |
+| `src/types/` | Common TypeScript type definitions |
+| `src/errors/` | Error handling and custom error types |
 
 ## 2. Extensions
 
