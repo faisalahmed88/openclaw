@@ -1,0 +1,1 @@
+/home/event/frappe-bench/apps/event/claude-event-project/context/06-payment-integration.md

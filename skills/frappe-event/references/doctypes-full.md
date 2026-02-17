@@ -1,0 +1,1 @@
+/home/event/frappe-bench/apps/event/claude-event-project/context/02-doctypes.md
